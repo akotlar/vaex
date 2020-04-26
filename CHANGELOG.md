@@ -6,6 +6,7 @@
      * DataFrame uses a normal dict instead of OrderedDict, requiring Python >= 3.6
      * Default limits (e.g. for plots) is minmax, so we don't miss outliers
      * df.get_column_names() returns the aliased names (invalid identifiers), pass alias=False to get the internal column name
+     * Default value of `virtual` is True in method df.export, df.to_dict, df.to_items, df.to_arrays.
 
 # vaex-core 2.0.0-dev
    * Performance
@@ -47,6 +48,7 @@
       * Column names can have unicode, and we use str.isidentifier to test, also dont accidently hide columns. [#617](https://github.com/vaexio/vaex/pull/617)
       * Percentile approx can take a sequence of percentages [#527](https://github.com/vaexio/vaex/pull/527)
       * Polygon testing, useful in combinations with geo/geojson data [#685](https://github.com/vaexio/vaex/pull/685)
+      * Enable chunking for df.to_dict and df.to_arrays methods. [#699](https://github.com/vaexio/vaex/pull/699)
 
 # vaex-server 0.3.0-dev
    * Refactored server, can return multiple binary blobs, execute multiple tasks, cancel tasks, encoding/serialization is more flexible (like returning masked arrays). [#571](https://github.com/vaexio/vaex/pull/557)
